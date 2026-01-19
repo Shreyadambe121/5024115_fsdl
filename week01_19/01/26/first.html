@@ -3,10 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Table Tabs Example</title>
+    <style>
+        /* Style the tab buttons */
+        .tab-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+        }
+        
+        .tab-btn {
+            padding: 10px 20px;
+            background-color: #f1f1f1;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        
+        /* Active tab styling */
+        .tab-btn.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .tab-btn:hover {
+            background-color: #ddd;
+        }
+        
+        /* Hide all tables by default */
+        .tab-content {
+            display: none;
+        }
+        
+        /* Show the active table */
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Table styling */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+        }
+        
+        td {
+            padding: 10px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
-    <h1>my first page</h1>
-    <a href="https://www.google.com/">google</a>
+    <h1>Table Tabs Example</h1>
+    <p>Click on the tabs below to switch between different tables:</p>
+    
+    <!-- Tab Buttons -->
+    <div class="tab-buttons">
+        <button class="tab-btn active" onclick="switchTab('students')">Students</button>
+        <button class="tab-btn" onclick="switchTab('teachers')">Teachers</button>
+        <button class="tab-btn" onclick="switchTab('courses')">Courses</button>
+    </div>
+    
+    <!-- Students Table -->
+    <div id="students" class="tab-content active">
+        <h2>Student List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Alice</td>
+                    <td>15</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>Bob</td>
+                    <td>16</td>
+                    <td>B</td>
+                </tr>
+                <tr>
+                    <td>Charlie</td>
+                    <td>15</td>
+                    <td>A</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Teachers Table -->
+    <div id="teachers" class="tab-content">
+        <h2>Teacher List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>Experience (Years)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mr. Smith</td>
+                    <td>Math</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>Ms. Johnson</td>
+                    <td>English</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>Dr. Brown</td>
+                    <td>Science</td>
+                    <td>15</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Courses Table -->
+    <div id="courses" class="tab-content">
+        <h2>Course List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Course Name</th>
+                    <th>Code</th>
+                    <th>Credit Hours</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Introduction to Python</td>
+                    <td>CS101</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>Web Development</td>
+                    <td>CS201</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Database Design</td>
+                    <td>CS301</td>
+                    <td>3</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <script>
+        // Function to switch between tabs
+        function switchTab(tabName) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show the selected tab
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
 </body>
 </html>
