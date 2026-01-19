@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hall Ticket</title>
+    <style>
+        /* Container for the hall ticket */
+        .ticket-container {
+            width: 600px;
+            margin: 20px auto;
+            padding: 30px;
+            border: 3px solid #333;
+            background-color: #fff;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Header styling */
+        .ticket-header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .ticket-header h1 {
+            margin: 0;
+            color: #d32f2f;
+            font-size: 32px;
+        }
+        
+        .school-name {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        /* Student photo section */
+        .photo-section {
+            float: right;
+            width: 100px;
+            height: 120px;
+            border: 2px solid #333;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 12px;
+            margin-left: 15px;
+        }
+        
+        /* Details section with two columns */
+        .details {
+            margin-top: 20px;
+            overflow: auto;
+        }
+        
+        .detail-row {
+            display: flex;
+            margin: 12px 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        
+        .detail-label {
+            font-weight: bold;
+            width: 150px;
+            color: #333;
+        }
+        
+        .detail-value {
+            flex: 1;
+            color: #555;
+        }
+        
+        /* Instructions section */
+        .instructions {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #d32f2f;
+        }
+        
+        .instructions h3 {
+            margin-top: 0;
+            color: #d32f2f;
+            font-size: 14px;
+        }
+        
+        .instructions ul {
+            margin: 8px 0;
+            padding-left: 20px;
+            font-size: 12px;
+            color: #555;
+        }
+        
+        .instructions li {
+            margin: 5px 0;
+        }
+        
+        /* Signature section */
+        .signature-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #ddd;
+            font-size: 12px;
+        }
+        
+        .signature {
+            text-align: center;
+            width: 120px;
+        }
+        
+        .signature-line {
+            margin-top: 30px;
+            border-top: 1px solid #333;
+            height: 1px;
+        }
+        
+        /* Print button */
+        .print-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 30px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .print-button:hover {
+            background-color: #45a049;
+        }
+        
+        /* Print media query */
+        @media print {
+            .print-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Print button -->
+    <button class="print-button" onclick="window.print()">Print Hall Ticket</button>
+    
+    <!-- Hall Ticket Container -->
+    <div class="ticket-container">
+        <!-- Header -->
+        <div class="ticket-header">
+            <h1>HALL TICKET</h1>
+            <div class="school-name">ABC School - Final Examination 2026</div>
+        </div>
+        
+        <!-- Photo Section -->
+        <div class="photo-section">
+            Photo (4x6)
+        </div>
+        
+        <!-- Student Details -->
+        <div class="details">
+            <div class="detail-row">
+                <div class="detail-label">Student Name:</div>
+                <div class="detail-value">John Doe</div>
+            </div>
+            
+            <div class="detail-row">
+                <div class="detail-label">Roll Number:</div>
+                <div class="detail-value">12345</div>
+            </div>
+            
+            <div class="detail-row">
+                <div class="detail-label">Class:</div>
+                <div class="detail-value">10 - A</div>
+            </div>
+            
+            <div class="detail-row">
+                <div class="detail-label">Subject:</div>
+                <div class="detail-value">Mathematics</div>
+            </div>
+            
+            <div class="detail-row">
+                <div class="detail-label">Exam Date:</div>
+                <div class="detail-value">25 January 2026</div>
+            </div>
+            
+            <div class="detail-row">
+                <div class="detail-label">Exam Time:</div>
+                <div class="detail-value">10:00 AM - 1:00 PM</div>
+            </div>
+            
+            <div class="detail-row">
+                <div class="detail-label">Exam Center:</div>
+                <div class="detail-value">Room No. 5, Building B</div>
+            </div>
+            
+            <div class="detail-row">
+                <div class="detail-label">Invigilator Name:</div>
+                <div class="detail-value">Mr. Robert Smith</div>
+            </div>
+        </div>
+        
+        <!-- Instructions -->
+        <div class="instructions">
+            <h3>IMPORTANT INSTRUCTIONS:</h3>
+            <ul>
+                <li>Report 15 minutes before the exam time</li>
+                <li>Carry this hall ticket and your ID card</li>
+                <li>Do not bring mobile phones or unauthorized devices</li>
+                <li>Maintain silence during the examination</li>
+                <li>Raise your hand if you need any assistance</li>
+            </ul>
+        </div>
+        
+        <!-- Signature Section -->
+        <div class="signature-section">
+            <div class="signature">
+                <div>Principal Signature</div>
+                <div class="signature-line"></div>
+            </div>
+            <div class="signature">
+                <div>Head of Department</div>
+                <div class="signature-line"></div>
+            </div>
+            <div class="signature">
+                <div>Student Signature</div>
+                <div class="signature-line"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
