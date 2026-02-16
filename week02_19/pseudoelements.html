@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Elements Demo</title>
+    <style>
+        p::first-letter {
+            font-size: 30px;
+            color: rgb(6, 93, 255);
+            font-weight: bold;
+        }
+        
+        p::first-line {
+            color: blue;
+        }
+        
+        p::selection {
+            background-color: yellow;
+            color: black;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <p>Hello World</p>
+</body>
+</html>
